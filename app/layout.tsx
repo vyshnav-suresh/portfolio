@@ -6,19 +6,19 @@ import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
   title: {
-    default: "chronark.com",
-    template: "%s | chronark.com",
+    default: "vyshnav.com",
+    template: "%s | vyshnav.com",
   },
   description: "Co-founder of unkey.dev and founder of planetfall.io",
   openGraph: {
-    title: "chronark.com",
+    title: "vyshnav.com",
     description:
       "Co-founder of unkey.dev and founder of planetfall.io",
-    url: "https://chronark.com",
+    url: "https://vyshnav.com",
     siteName: "chronark.com",
     images: [
       {
-        url: "https://chronark.com/og.png",
+        url: "https://vyshnav.com/og.png",
         width: 1920,
         height: 1080,
       },
@@ -38,11 +38,11 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Chronark",
+    title: "vyshnav",
     card: "summary_large_image",
   },
   icons: {
-    shortcut: "/favicon.png",
+    // shortcut: "/favicon.png",
   },
 };
 const inter = Inter({
@@ -65,9 +65,12 @@ export default function RootLayout({
       <head>
         <Analytics />
       </head>
-      <body
+      {/* <body
         className={`bg-black ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined
           }`}
+      > */}
+        <body
+        className={`bg-black `}
       >
         {children}
       </body>
