@@ -15,19 +15,7 @@ export default async function ProjectsPage() {
   const featured= data;
   const top2 = data.find((project) => project.slug === "planetfall")!;
   const top3 = data.find((project) => project.slug === "highstorm")!;
-  const sorted = data
-    .filter((p) => p.published)
-    .filter(
-      (project) =>
-        project.slug !== featured.slug &&
-        project.slug !== top2.slug &&
-        project.slug !== top3.slug,
-    )
-    .sort(
-      (a, b) =>
-        new Date(b.date ?? Number.POSITIVE_INFINITY).getTime() -
-        new Date(a.date ?? Number.POSITIVE_INFINITY).getTime(),
-    );
+  
 
   return (
     <div className="relative pb-16">
