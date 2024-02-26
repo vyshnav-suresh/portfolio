@@ -9,7 +9,7 @@ const data = [
       technologies: ['Nextjs', 'Tailwind'],
       imageUrl: '/images/unkey-thumbnail.jpg',
       githubUrl: 'https://github.com/yourusername/unkey',
-      liveDemoUrl: 'https://unkey-demo.com',
+      liveDemoUrl: 'https://risskatingclub.com',
       published:'2023-03-28'
     },
     {
@@ -20,7 +20,7 @@ const data = [
       technologies: ['Nextjs', 'Tailwind'],
       imageUrl: '/images/planetfall-thumbnail.jpg',
       githubUrl: 'https://github.com/yourusername/planetfall',
-      liveDemoUrl: 'https://www.sharqlalhirah.com',
+      liveDemoUrl: 'https://www.sharqalhirah.com',
       published:'2023-03-28'
 
     },
@@ -29,7 +29,7 @@ const data = [
       title: 'Rishiyoga',
       date: '2022-03-01',
       description: 'Description for the Highstorm project.',
-      technologies: ['Angular', 'MongoDB'],
+      technologies: ['Django', 'HTML','CSS','AWS',],
       imageUrl: '/images/highstorm-thumbnail.jpg',
       githubUrl: 'https://github.com/yourusername/highstorm',
       liveDemoUrl: 'https://rishiyogattc.com',
