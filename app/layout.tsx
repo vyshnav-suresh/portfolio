@@ -9,13 +9,13 @@ export const metadata: Metadata = {
     default: "vyshnav.com",
     template: "%s | vyshnav.com",
   },
-  description: "Co-founder of unkey.dev and founder of planetfall.io",
+  description: "Dev @ work",
   openGraph: {
     title: "vyshnav.com",
     description:
-      "Co-founder of unkey.dev and founder of planetfall.io",
+      "Dev @ work",
     url: "https://vyshnav.com",
-    siteName: "chronark.com",
+    siteName: "",
     images: [
       {
         url: "https://vyshnav.com/og.png",
