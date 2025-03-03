@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Particles from "./components/particles";
+import { Download } from "lucide-react";
 
 const navigation = [
   { name: "Projects", href: "/projects" },
@@ -29,10 +30,10 @@ export default function Home() {
         quantity={100}
       />
       <h1 className="z-10 text-4xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text ">
-      Vyshnav
+        Vyshnav
       </h1>
       <h1 className="z-10 text-xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-xl md:text-2xl whitespace-nowrap bg-clip-text ">
-      Software Engineer
+        Software Engineer
       </h1>
 
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
@@ -45,10 +46,21 @@ export default function Home() {
             className="underline duration-500 hover:text-zinc-300"
           >
             exp.dev
-          </Link> to solve Expense tracking for normal people.
+          </Link>{" "}to solve Expense tracking for normal people.
         </h2>
+      </div>
+      
+      {/* Enhanced Resume Download Section */}
+      <div className="my-10 text-center animate-fade-in">
+        <Link
+          href="/resume.pdf"
+          download
+          className="flex items-center gap-2 px-6 py-3 text-white bg-zinc-800 hover:bg-zinc-600 rounded-lg text-base font-semibold transition-transform duration-300 hover:scale-105 shadow-lg"
+        >
+          <Download className="w-5 h-5" />
+          View My Experience
+        </Link>
       </div>
     </div>
   );
-
 }
