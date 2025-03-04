@@ -7,6 +7,13 @@ const navigation = [
   { name: "Projects", href: "/projects" },
   { name: "Contact", href: "/contact" },
 ];
+const projects = [
+  {
+    title: "X Open Chat",
+    description: "An AI-powered conversational assistant built using Next.js and OpenRouter API.",
+    link: "https://github.com/yourusername/XOpenChat",
+  },
+];
 
 export default function Home() {
   return (
@@ -60,6 +67,22 @@ export default function Home() {
           <Download className="w-5 h-5" />
           View My Experience
         </Link>
+      </div>
+       
+      {/* Project Showcase Section */}
+      <div className="my-16 text-center animate-fade-in w-full max-w-4xl">
+        <h2 className="text-2xl font-bold text-white">Projects</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+          {projects.map((project, index) => (
+            <div key={index} className="p-6 bg-zinc-800 rounded-lg shadow-lg hover:scale-105 transition-transform">
+              <h3 className="text-lg font-semibold text-white">{project.title}</h3>
+              <p className="text-sm text-zinc-400">{project.description}</p>
+              <Link href={project.link} className="text-sm text-blue-400 hover:underline mt-2 inline-block">
+                View Project →
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
