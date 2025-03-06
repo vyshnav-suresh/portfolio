@@ -11,7 +11,7 @@ const projects = [
   {
     title: "X Open Chat",
     description: "An AI-powered conversational assistant built using Next.js and OpenRouter API.",
-    link: "https://github.com/yourusername/XOpenChat",
+    link: "https://github.com/vyshnav-suresh/xopenchat.ai",
   },
 ];
 
