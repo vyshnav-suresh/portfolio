@@ -1,5 +1,5 @@
+import { projects } from "@/util/constant";
 import { NextApiRequest, NextApiResponse } from "next";
-import { projects } from "../page";
 
 export default function handler(req:NextApiRequest, res:NextApiResponse) {
   const baseUrl = "https://vyshnav-suresh.vercel.app";

@@ -5,19 +5,9 @@ import React, { useState } from "react";
 import { Download } from "lucide-react";
 import toast from "react-hot-toast";
 import Particles from "./components/particles";
+import { projects } from "@/util/constant";
 
-const projects = [
-  {
-    title: "X Open Chat",
-    description: "An AI-powered conversational assistant built using Next.js and OpenRouter API.",
-    link: "https://xopenchat-ai.vercel.app",
-  },
-  {
-    title: "EvolveOps",
-    description: "A modern cloud-native operations platform for managing infrastructure and deployments.",
-    link: "https://evolveops.vercel.app/",
-  },
-];
+
 
 export default function Home() {
   const [isDownloading, setIsDownloading] = useState(false);
