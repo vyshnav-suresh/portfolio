@@ -2,16 +2,11 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
-import { Download } from "lucide-react";
 import toast from "react-hot-toast";
-import Particles from "./components/particles";
 import { Download } from "lucide-react";
+import Particles from "./components/particles";
 
 const navigation = [
-  { name: "Projects", href: "/projects" },
-  { name: "Contact", href: "/contact" },
-];
-const projects = [
   {
     title: "X Open Chat",
     description: "An AI-powered conversational assistant built using Next.js and OpenRouter API.",
@@ -30,10 +25,8 @@ export default function Home() {
   const handleDownload = () => {
     setIsDownloading(true);
     const processingToast = toast.loading("Processing...", {
-      icon: "⏳",
       style: { borderRadius: "10px", background: "#333", color: "#fff" },
     });
-
     setTimeout(() => {
       toast.dismiss(processingToast);
       toast.success("Download Successful! ✅", {
@@ -71,27 +64,22 @@ export default function Home() {
             className="underline duration-500 hover:text-zinc-300"
           >
             exp.dev
-          </Link>{" "}to solve Expense tracking for normal people.
-        </h2>
-      </div>
-      
-      {/* Enhanced Resume Download Section */}
-      <div className="my-10 text-center animate-fade-in">
-        <Link
-          href="/resume.pdf"
-          download
-          className="flex items-center gap-2 px-6 py-3 text-white bg-zinc-800 hover:bg-zinc-600 rounded-lg text-base font-semibold transition-transform duration-300 hover:scale-105 shadow-lg"
-        >
-          <Download className="w-5 h-5" />
+          </Link>{" "}
+          to solve Expense tracking for normal people.
+        </p>
+      </section>
+      <div>
+        <Download className="w-5 h-5" />
+        <Link href="/experience" className="underline duration-500 hover:text-zinc-300">
           View My Experience
         </Link>
       </div>
-       
+
       {/* Project Showcase Section */}
-      <div className="my-16 text-center animate-fade-in w-full max-w-4xl">
+      <section className="my-16 text-center animate-fade-in w-full max-w-4xl">
         <h2 className="text-2xl font-bold text-white">On Going Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-          {projects.map((project, index) => (
+          {navigation.map((project, index) => (
             <article
               key={index}
               className="p-6 bg-zinc-800 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 hover:bg-zinc-700"
