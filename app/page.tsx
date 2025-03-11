@@ -11,7 +11,12 @@ const projects = [
   {
     title: "X Open Chat",
     description: "An AI-powered conversational assistant built using Next.js and OpenRouter API.",
-    link: "https://github.com/yourusername/XOpenChat",
+    link: "https://xopenchat-ai.vercel.app",
+  },
+  {
+    title: "EvolveOps",
+    description: "A software solutions company.",
+    link: "https://evolveops.vercel.app",
   },
 ];
 
@@ -71,7 +76,7 @@ export default function Home() {
        
       {/* Project Showcase Section */}
       <div className="my-16 text-center animate-fade-in w-full max-w-4xl">
-        <h2 className="text-2xl font-bold text-white">Projects</h2>
+        <h2 className="text-2xl font-bold text-white">On Going Projects</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
           {projects.map((project, index) => (
             <div key={index} className="p-6 bg-zinc-800 rounded-lg shadow-lg hover:scale-105 transition-transform">
