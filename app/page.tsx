@@ -27,6 +27,7 @@ export default function Home() {
     const processingToast = toast.loading("Processing...", {
       style: { borderRadius: "10px", background: "#333", color: "#fff" },
     });
+
     setTimeout(() => {
       toast.dismiss(processingToast);
       toast.success("Download Successful! ✅", {
@@ -49,6 +50,8 @@ export default function Home() {
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Particles className="absolute inset-0 -z-10 animate-fade-in" quantity={100} />
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
+      
+      {/* Heading Section */}
       <section className="text-center">
         <h1 className="z-10 text-4xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text">
           Vyshnav
@@ -68,17 +71,22 @@ export default function Home() {
           to solve Expense tracking for normal people.
         </p>
       </section>
-      <div>
-        <Download className="w-5 h-5" />
-        <Link href="/experience" className="underline duration-500 hover:text-zinc-300">
-          View My Experience
-        </Link>
+
+      {/* 🔥 Fixed "View My Experience" Button */}
+      <div className="flex items-center justify-center mt-6">
+        <button
+          onClick={handleDownload}
+          className="flex items-center gap-2 px-6 py-3 bg-white text-black font-semibold rounded-lg shadow-lg hover:bg-gray-300 transition-all"
+        >
+          <Download className="w-5 h-5" />
+          {isDownloading ? "Downloading..." : "View My Experience"}
+        </button>
       </div>
 
       {/* Project Showcase Section */}
       <section className="my-16 text-center animate-fade-in w-full max-w-4xl">
         <h2 className="text-2xl font-bold text-white">On Going Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
           {navigation.map((project, index) => (
             <article
               key={index}
@@ -93,9 +101,11 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* Contact Section */}
       <section id="contact" className="my-16 text-center animate-fade-in">
         <h2 className="text-2xl font-bold text-white">Contact</h2>
-        <p className="text-zinc-400">Email: vyshnav@example.com</p>
+        <p className="text-zinc-400">Email: contact@vyshnav.dev</p>
       </section>
     </div>
   );

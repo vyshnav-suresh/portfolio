@@ -6,19 +6,19 @@ import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
   title: {
-    default: "vyshnav.com",
-    template: "%s | vyshnav.com",
+    default: "vyshnav.dev",
+    template: "%s | vyshnav.dev",
   },
   description: "Dev @ work",
   openGraph: {
-    title: "vyshnav.com",
+    title: "vyshnav.dev",
     description:
       "Dev @ work",
-    url: "https://vyshnav.com",
+    url: "https://vyshnav.dev",
     siteName: "",
     images: [
       {
-        url: "https://vyshnav.com/og.png",
+        url: "https://vyshnav.dev/og.png",
         width: 1920,
         height: 1080,
       },
