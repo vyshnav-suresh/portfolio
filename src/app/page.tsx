@@ -1,48 +1,131 @@
 "use client"
 import Link from "next/link";
-import { DefaultSeo } from "next-seo";
-import SEO from "../../next-seo.config";
+// import { DefaultSeo } from "next-seo";
+// import SEO from "../../next-seo.config";
+import Hero from "../components/Hero";
 import { motion } from "framer-motion";
 
 export default function Home() {
   return (
     <>
       {/* <DefaultSeo {...SEO} /> */}
-      {/* <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center"> */}
-      <div className="min-h-screen bg-background text-text flex flex-col items-center justify-center px-6">
-      <h1 className="text-5xl font-bold tracking-tight">Vyshnav</h1>
-      <p className="text-gray-400 mt-2 text-lg">Software Engineer</p>
+      
+      {/* Hero Section */}
+      <Hero />
 
-      {/* Call to Action */}
-      <a
-        href="/resume.pdf"
-        className="bg-accent text-black px-6 py-3 mt-6 rounded-lg text-lg font-semibold shadow-lg hover:bg-highlight transition duration-300"
-        download
-      >
-        View My Experience
-      </a>
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 bg-background/90 backdrop-blur-sm z-50 p-4">
+        <div className="container mx-auto px-4 flex justify-between items-center">
+          <Link href="/" className="text-xl font-bold">Vyshnav</Link>
+          <div className="hidden md:flex space-x-8">
+            <Link href="/about" className="hover:text-accent transition">About</Link>
+            <Link href="/skills" className="hover:text-accent transition">Skills</Link>
+            <Link href="/projects" className="hover:text-accent transition">Projects</Link>
+            <Link href="/hobby" className="hover:text-accent transition">Hobby</Link>
+            <Link href="/contact" className="hover:text-accent transition">Contact</Link>
+          </div>
+        </div>
+      </nav>
 
       {/* Projects Section */}
-      <div className="mt-16 text-center">
-        <h2 className="text-3xl font-bold">Projects</h2>
-        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-          <a href="/projects/xopenchat" className="p-6 bg-secondary rounded-lg shadow-lg hover:scale-105 transition duration-300">
-            <h3 className="text-lg font-semibold">X Open Chat</h3>
-            <p className="text-gray-400 text-sm">An AI-powered assistant.</p>
-          </a>
-          <a href="/projects/evolveops" className="p-6 bg-secondary rounded-lg shadow-lg hover:scale-105 transition duration-300">
-            <h3 className="text-lg font-semibold">EvolveOps</h3>
-            <p className="text-gray-400 text-sm">Cloud-native operations platform.</p>
-          </a>
+      <section className="py-20 bg-background/90">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold">Projects</h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="bg-secondary p-6 rounded-lg shadow-lg transition duration-300"
+            >
+              <h3 className="text-xl font-semibold mb-4">X Open Chat</h3>
+              <p className="text-muted-foreground mb-4">An AI-powered chat assistant built with modern web technologies.</p>
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-muted-foreground">React, Node.js, OpenAI</span>
+                <div className="flex space-x-2">
+                  <a href="/projects/xopenchat" className="text-accent hover:text-highlight">Details</a>
+                  <a href="https://github.com/vyshnav-suresh/xopenchat" className="text-accent hover:text-highlight">GitHub</a>
+                </div>
+              </div>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="bg-secondary p-6 rounded-lg shadow-lg transition duration-300"
+            >
+              <h3 className="text-xl font-semibold mb-4">EvolveOps</h3>
+              <p className="text-muted-foreground mb-4">Cloud-native operations platform for modern infrastructure.</p>
+              <div className="flex justify-between items-center">
+                <span className="text-sm text-muted-foreground">Kubernetes, Docker, AWS</span>
+                <div className="flex space-x-2">
+                  <a href="/projects/evolveops" className="text-accent hover:text-highlight">Details</a>
+                  <a href="https://github.com/vyshnav-suresh/evolveops" className="text-accent hover:text-highlight">GitHub</a>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* Contact Section */}
-      <div className="mt-16">
-        <h2 className="text-2xl font-semibold">Contact</h2>
-        <p className="text-gray-400 text-lg">Email: vyshnav@example.com</p>
-      </div>
-    </div>
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold">Contact Me</h2>
+          </motion.div>
+
+          <div className="max-w-2xl mx-auto">
+            <form className="space-y-6">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium mb-1">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-accent"
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium mb-1">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-accent"
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium mb-1">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  rows={4}
+                  className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-accent"
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-accent text-black px-6 py-3 rounded-lg text-lg font-semibold shadow-lg hover:bg-highlight transition duration-300"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
