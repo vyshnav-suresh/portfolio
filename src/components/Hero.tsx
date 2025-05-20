@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Button } from "./ui/Button";
 import { Github, Linkedin, Instagram } from "lucide-react";
+import VoiceAssistant from "./VoiceAssistant";
 
 const TAGLINES = [
   "Empowering ideas with code.",
@@ -67,9 +68,9 @@ export default function Hero() {
           <a href="https://instagram.com/vyshnav_suresh" target="_blank" rel="noopener noreferrer"><Button variant="ghost" size="icon"><Instagram className="w-5 h-5" /></Button></a>
         </div>
       </div>
-        {/* Right: Visual Illustration */}
-        <div className="flex-1 flex justify-center items-center mt-8 md:mt-0">
-          <img src="/hero-illustration.png" alt="Developer at laptop with AI and coding icons" className="w-56 h-56 md:w-72 md:h-72 rounded-full shadow-2xl object-cover bg-white/30 p-4" />
+        {/* Right: Voice Assistant Only */}
+        <div className="flex-1 flex flex-col items-center justify-center mt-8 md:mt-0 gap-8">
+          <VoiceAssistant />
         </div>
       </div>
       {/* Optional: Animated Background Pattern */}
