@@ -1,13 +1,13 @@
 export default function AboutPage() {
   return (
-    <section className="py-20 bg-background/90 min-h-screen">
-      <div className="container mx-auto px-4 max-w-4xl">
+    <section className="py-20 min-h-screen" style={{ background: 'var(--background)', color: 'var(--foreground)' }}>
+      <div className="mx-auto px-4 max-w-3xl card text-left bg-card text-body">
         {/* Professional Summary */}
-        <h2 className="text-3xl font-bold">About Me</h2>
+        <h2 className="text-3xl font-bold text-accent-text">About Me</h2>
+        <hr className="gradient-divider" />
         <p className="mt-2 text-muted-foreground text-lg">
           I'm Vyshnav Suresh — a full stack developer and tech architect building AI-driven tools, trading systems, and web experiences that scale. From streamlining SEO analytics to crafting custom automation, I turn ideas into real-world solutions.
         </p>
-
         {/* Background */}
         <p className="mt-4 text-base text-muted-foreground">
           My journey started with curiosity — exploring how code can solve real problems. Over the years, I’ve built systems across fintech, e-commerce, SEO, and AI. I believe in pragmatic development, clean architecture, and delivering meaningful impact through tech.

@@ -68,10 +68,7 @@ export default function Hero() {
           <a href="https://instagram.com/vyshnav_suresh" target="_blank" rel="noopener noreferrer"><Button variant="ghost" size="icon"><Instagram className="w-5 h-5" /></Button></a>
         </div>
       </div>
-        {/* Right: Voice Assistant Only */}
-        <div className="flex-1 flex flex-col items-center justify-center mt-8 md:mt-0 gap-8">
-          <VoiceAssistant />
-        </div>
+
       </div>
       {/* Optional: Animated Background Pattern */}
       <div className="absolute inset-0 bg-gradient-to-r from-accent/10 to-transparent opacity-10 pointer-events-none" />

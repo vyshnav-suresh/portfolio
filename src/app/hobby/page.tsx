@@ -1,8 +1,9 @@
 export default function HobbyPage() {
   return (
-    <section className="py-20 bg-background/90 min-h-screen">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold mb-8 text-center">Hobbies & Interests</h2>
+    <section className="py-20 min-h-screen">
+      <div className="mx-auto px-4 max-w-3xl card text-left">
+        <h2 className="text-4xl font-bold mb-8 text-center" style={{ color: 'var(--accent)' }}>Hobbies & Interests</h2>
+        <hr className="gradient-divider" />
         <div className="max-w-2xl mx-auto text-lg text-center text-muted-foreground">
           <p>
             Outside of coding, I enjoy a variety of hobbies that help me stay creative and balanced:

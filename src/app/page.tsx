@@ -13,19 +13,6 @@ export default function Home() {
       {/* Hero Section */}
       <Hero />
 
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 bg-background/90 backdrop-blur-sm z-50 p-4">
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <Link href="/" className="text-xl font-bold">Vyshnav</Link>
-          <div className="hidden md:flex space-x-8">
-            <Link href="/about" className="hover:text-accent transition">About</Link>
-            <Link href="/skills" className="hover:text-accent transition">Skills</Link>
-            <Link href="/projects" className="hover:text-accent transition">Projects</Link>
-            <Link href="/hobby" className="hover:text-accent transition">Hobby</Link>
-            <Link href="/contact" className="hover:text-accent transition">Contact</Link>
-          </div>
-        </div>
-      </nav>
 
       {/* Projects Section */}
       <section className="py-20 bg-background/90">
