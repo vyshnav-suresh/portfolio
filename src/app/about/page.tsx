@@ -6,14 +6,14 @@ export default function AboutPage() {
         <h2 className="text-3xl font-bold text-accent-text">About Me</h2>
         <hr className="gradient-divider" />
         <p className="mt-2 text-muted-foreground text-lg">
-          I'm Vyshnav Suresh — a full stack developer and tech architect building AI-driven tools, trading systems, and web experiences that scale. From streamlining SEO analytics to crafting custom automation, I turn ideas into real-world solutions.
+          I&apos;m Vyshnav Suresh — a full stack developer and tech architect building AI-driven tools, trading systems, and web experiences that scale. From streamlining SEO analytics to crafting custom automation, I turn ideas into real-world solutions.
         </p>
         {/* Background */}
         <p className="mt-4 text-base text-muted-foreground">
-          My journey started with curiosity — exploring how code can solve real problems. Over the years, I’ve built systems across fintech, e-commerce, SEO, and AI. I believe in pragmatic development, clean architecture, and delivering meaningful impact through tech.
+          My journey started with curiosity — exploring how code can solve real problems. Over the years, I&apos;ve built systems across fintech, e-commerce, SEO, and AI. I believe in pragmatic development, clean architecture, and delivering meaningful impact through tech.
         </p>
         <p className="mt-2 text-base text-muted-foreground">
-          Whether it’s a chatbot that understands your intent, an SEO dashboard that makes insights actionable, or a trading bot that watches the markets for you — I love designing systems that just work.
+          Whether it&apos;s a chatbot that understands your intent, an SEO dashboard that makes insights actionable, or a trading bot that watches the markets for you &mdash; I love designing systems that just work.
         </p>
 
         {/* Tech Stack */}

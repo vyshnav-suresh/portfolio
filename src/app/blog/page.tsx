@@ -5,6 +5,7 @@ import { supabase } from "@/lib/supabaseClient";
 import type { BlogPost } from "./supabase.types";
 import Link from "next/link";
 import { DateClient } from "./DateClient";
+import Image from "next/image";
 
 
 
@@ -84,7 +85,7 @@ export default function BlogPage() {
               {/* Featured image */}
               {post.image && (
                 <Link href={`/blog/${post.id}`} tabIndex={-1}>
-                  <img src={post.image} alt={post.title} className="card-image w-full object-cover" />
+                  <Image src={post.image} alt={post.title} className="card-image w-full object-cover" />
                 </Link>
               )}
               {/* Accent bar */}
@@ -97,7 +98,7 @@ export default function BlogPage() {
               {/* Author, category, reading time */}
               <div className="flex items-center gap-3 card-meta mb-1">
                 {post.author?.image && (
-                  <img src={post.author.image} alt={post.author.name} className="w-7 h-7 rounded-full object-cover border border-border" />
+                  <Image src={post.author.image} alt={post.author.name} className="w-7 h-7 rounded-full object-cover border border-border" width={28} height={28} />
                 )}
                 {post.author?.name && <span className="card-author">{post.author.name}</span>}
                 {post.category && <span className="card-tag">{post.category}</span>}

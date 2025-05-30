@@ -1,9 +1,8 @@
 "use client"
-import Link from "next/link";
 // import { DefaultSeo } from "next-seo";
 // import SEO from "../../next-seo.config";
-import Hero from "../components/Hero";
 import { motion } from "framer-motion";
+import Hero from "../components/Hero";
 
 export default function Home() {
   return (

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ThemeToggle from "../components/ThemeToggle";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-sans",
@@ -98,15 +99,15 @@ export default function RootLayout({
         {/* Navigation */}
         <nav className="fixed top-0 left-0 right-0 bg-background/90 backdrop-blur-sm z-50 p-4">
           <div className="container mx-auto px-4 flex justify-between items-center">
-            <a href="/" className="text-xl font-bold">Vyshnav</a>
+            <Link href="/" className="text-xl font-bold">Vyshnav</Link>
             <div className="flex items-center">
               <div className="hidden md:flex space-x-8">
-                <a href="/about" className="hover:text-accent transition">About</a>
-                <a href="/skills" className="hover:text-accent transition">Skills</a>
-                <a href="/projects" className="hover:text-accent transition">Projects</a>
-                <a href="/blog" className="hover:text-accent transition">Blog</a>
-                <a href="/hobby" className="hover:text-accent transition">Hobby</a>
-                <a href="/contact" className="hover:text-accent transition">Contact</a>
+                <Link href="/about" className="hover:text-accent transition">About</Link>
+                <Link href="/skills" className="hover:text-accent transition">Skills</Link>
+                <Link href="/projects" className="hover:text-accent transition">Projects</Link>
+                <Link href="/blog" className="hover:text-accent transition">Blog</Link>
+                <Link href="/hobby" className="hover:text-accent transition">Hobby</Link>
+                <Link href="/contact" className="hover:text-accent transition">Contact</Link>
               </div>
               <ThemeToggle />
             </div>

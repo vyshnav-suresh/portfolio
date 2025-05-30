@@ -1,9 +1,7 @@
-import { motion } from "framer-motion";
+import { Github, Instagram, Linkedin } from "lucide-react";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "./ui/Button";
-import { Github, Linkedin, Instagram } from "lucide-react";
-import VoiceAssistant from "./VoiceAssistant";
 
 const TAGLINES = [
   "Empowering ideas with code.",
