@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: "class",
     content: ["./app/**/*.{js,ts,jsx,tsx}"],
     theme: {
       extend: {
@@ -8,11 +7,15 @@ module.exports = {
           sans: ["Montserrat", "Arial", "Helvetica", "sans-serif"],
         },
         colors: {
-          background: '#0f172a', // dark navy
-          foreground: '#f1f5f9', // light text
+          background: '#faf6ff', // light background
+          foreground: '#2d234a', // main text
           muted: '#94a3b8',      // secondary text
-          card: '#1e293b',       // card background
-          border: '#334155',     // borders/dividers
+          card: '#fff',          // card background
+          border: '#e3d7fa',     // borders/dividers
+          primary: '#2d234a',    // deep purple (for text)
+          highlight: '#6c3fd1',  // accent purple (for bg)
+          'slate-900': '#0f172a', // for strong headings
+          'slate-700': '#334155', // for muted headings
           accent: {
             DEFAULT: '#38bdf8',  // primary accent blue
             hover: '#0ea5e9',    // accent hover

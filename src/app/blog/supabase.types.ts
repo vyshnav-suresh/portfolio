@@ -5,7 +5,9 @@ export type BlogPost = {
   tags: string[];
   created_at: string;
   updated_at: string;
-  image?: string; // featured image URL
+  featured_image_url?: string; // featured image URL (base64 or URL)
+  status?: string; // e.g., 'active', 'featured', etc.
+  image?: string; // deprecated, for backward compatibility
   author?: {
     name: string;
     image?: string;

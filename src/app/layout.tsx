@@ -95,24 +95,23 @@ export default function RootLayout({
       suppressHydrationWarning
     >
      
-      <body className="min-h-screen font-sans antialiased" style={{ background: 'var(--background)', color: 'var(--foreground)' }}>
+      <body className="min-h-screen font-sans antialiased px-20">
         {/* Navigation */}
-        <nav className="fixed top-0 left-0 right-0 bg-background/90 backdrop-blur-sm z-50 p-4">
-          <div className="container mx-auto px-4 flex justify-between items-center">
-            <Link href="/" className="text-xl font-bold">Vyshnav</Link>
-            <div className="flex items-center">
-              <div className="hidden md:flex space-x-8">
-                <Link href="/about" className="hover:text-accent transition">About</Link>
-                <Link href="/skills" className="hover:text-accent transition">Skills</Link>
-                <Link href="/projects" className="hover:text-accent transition">Projects</Link>
-                <Link href="/blog" className="hover:text-accent transition">Blog</Link>
-                <Link href="/hobby" className="hover:text-accent transition">Hobby</Link>
-                <Link href="/contact" className="hover:text-accent transition">Contact</Link>
-              </div>
-              <ThemeToggle />
-            </div>
-          </div>
-        </nav>
+        <nav className="fixed top-0 left-0 right-0 bg-[#faf6ff]/80 shadow-lg backdrop-blur-[6px] z-50 py-4 px-0 border-b border-[#e3d7fa]">
+  <div className="container mx-auto  flex justify-between items-center">
+    <Link href="/" className="text-2xl font-extrabold tracking-tight text-[#6c3fd1] hover:text-[#7e3ff2] transition">Vyshnav</Link>
+    <div className="flex items-center">
+      <div className="hidden md:flex space-x-8">
+        <Link href="/about" className="font-medium text-[#2d234a] hover:text-[#6c3fd1] transition">About</Link>
+        <Link href="/skills" className="font-medium text-[#2d234a] hover:text-[#6c3fd1] transition">Skills</Link>
+        <Link href="/projects" className="font-medium text-[#2d234a] hover:text-[#6c3fd1] transition">Projects</Link>
+        <Link href="/blog" className="font-medium text-[#2d234a] hover:text-[#6c3fd1] transition">Blog</Link>
+        <Link href="/hobby" className="font-medium text-[#2d234a] hover:text-[#6c3fd1] transition">Hobby</Link>
+        <Link href="/contact" className="font-medium text-[#2d234a] hover:text-[#6c3fd1] transition">Contact</Link>
+      </div>
+    </div>
+  </div>
+</nav>
         {children}
       </body>
     </html>

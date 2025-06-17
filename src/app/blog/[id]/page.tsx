@@ -5,6 +5,12 @@ import Link from 'next/link';
 import { CopyLinkButton } from '../CopyLinkButton';
 import { DateClient } from '../DateClient';
 
+import Image from "next/image";
+import { Container } from "@/components/ui/Container";
+import { Heading } from "@/components/ui/Heading";
+import { Text } from "@/components/ui/Text";
+import { Badge } from "@/components/ui/Badge";
+
 // Type inference for Next.js App Router
 type PageProps = {
   params: Promise<{
@@ -12,43 +18,11 @@ type PageProps = {
   }>;
 };
 
-
-
-// export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-//   const { data } = await supabase
-//     .from('blog_posts')
-//     .select('id, title, content, tags, created_at, updated_at, image')
-//     .eq('id', params.id)
-//     .single();
-//   if (!data) return {};
-//   const description = data.content?.replace(/<[^>]+>/g, '').slice(0, 160) || data.title;
-//   return {
-//     title: data.title,
-//     description,
-//     keywords: data.tags,
-//     openGraph: {
-//       title: data.title,
-//       description,
-//       type: 'article',
-//       publishedTime: data.created_at,
-//       modifiedTime: data.updated_at,
-//       tags: data.tags,
-//       images: data.image ? [data.image] : undefined,
-//     },
-//     twitter: {
-//       card: 'summary_large_image',
-//       title: data.title,
-//       description,
-//       images: data.image ? [data.image] : undefined,
-//     },
-//   };
-// }
-
 export default async function BlogPostPage({ params }: PageProps) {
 
   const { data, error } = await supabase
     .from('blog_posts')
-    .select('id, title, content, tags, created_at, updated_at, status')
+    .select('id, title, content, tags, created_at, updated_at, status,featured_image_url')
     .eq('id', (await params).id)
     .eq('status', 'active')
     .single();
@@ -59,45 +33,30 @@ export default async function BlogPostPage({ params }: PageProps) {
   }
 
   return (
-    <main className="max-w-6xl mx-auto py-20 px-4 min-h-screen bg-background text-foreground">
-      <div className="mb-8">
-        <Link href="/blog" className="inline-flex items-center gap-2 text-accent hover:underline font-semibold">
-          <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-            <path d="M15 19l-7-7 7-7" />
-          </svg>
-          Back to Blog
-        </Link>
-      </div>
-      <article className="bg-card border border-border rounded-2xl p-6 md:p-16 lg:p-24 shadow-xl mb-16 mt-8 animate-fade-in">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-accent">{data.title}</h1>
-        <div className="flex flex-wrap items-center gap-4 mb-6 text-muted text-sm">
-          <span className="flex items-center gap-1">
-            <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10" />
-              <path d="M12 6v6l4 2" />
-            </svg>
-            <DateClient iso={data.created_at} />
-          </span>
-          {data.updated_at && data.updated_at !== data.created_at && (
-            <span className="flex items-center gap-1">
-              <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path d="M12 8v4l3 3" />
-                <circle cx="12" cy="12" r="10" />
-              </svg>
-              Updated: <DateClient iso={data.updated_at} />
-            </span>
-          )}
-          <span className="flex items-center gap-2 flex-wrap">
-            <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path d="M7 7h10M7 12h4m1 8a9 9 0 1 0 0-18 9 9 0 0 0 0 18z" />
-            </svg>
-            {data.tags.map((tag: string) => (
-              <span key={tag} className="inline-block px-3 py-1 rounded-lg bg-muted text-xs font-semibold text-foreground/80 mr-1">
-                #{tag}
-              </span>
-            ))}
-          </span>
+    <Container size="lg" padding="default" className="py-20 min-h-screen">
+      <div className="pt-6">
+        <div className="mb-8">
+          <Link href="/blog" className="inline-flex items-center gap-2 hover:underline font-semibold text-accent">
+            <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" /></svg>
+            Back to Blog
+          </Link>
         </div>
+
+        <article className="bg-card/90 border border-border rounded-2xl shadow-lg px-4 md:px-12 py-10 md:py-16 mb-10">
+          {data.featured_image_url && (
+            <div className="w-full flex justify-center mb-8">
+              <img
+                src={data.featured_image_url}
+                alt={data.title}
+                className="object-cover rounded-xl border border-muted max-h-[320px] w-full max-w-2xl shadow-sm"
+              />
+            </div>
+          )}
+          <div className="flex flex-wrap gap-2 mb-4">
+  {data.tags && data.tags.map((tag: string) => (
+    <Badge key={tag} variant="accent" size="sm">{tag}</Badge>
+  ))}
+</div>
         <div className="flex flex-wrap gap-4 mb-8 items-center">
           <a
             href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(data.title)}&url=${typeof window !== 'undefined' ? window.location.href : ''}`}
@@ -127,6 +86,8 @@ export default async function BlogPostPage({ params }: PageProps) {
         </div>
         <div className="prose prose-invert text-lg max-w-4xl mx-auto leading-relaxed" style={{ wordBreak: 'break-word' }} dangerouslySetInnerHTML={{ __html: data.content }} />
       </article>
-    </main>
+
+      </div>
+    </Container>
   );
 }
