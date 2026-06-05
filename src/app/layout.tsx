@@ -1,86 +1,32 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { DM_Sans, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
-import ThemeToggle from "../components/ThemeToggle";
 import Link from "next/link";
 
-const geistSans = Geist({
+const dmSans = DM_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
   display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-mono",
+const dmSerifDisplay = DM_Serif_Display({
+  variable: "--font-display",
   subsets: ["latin"],
+  weight: "400",
   display: "swap",
 });
 
-// Site metadata
 export const metadata: Metadata = {
-  title: "Vyshnav Suresh | Full Stack Developer",
-  description: "Full Stack Developer passionate about building exceptional digital experiences with modern web technologies.",
-  keywords: ["Full Stack Developer", "Web Developer", "React", "Next.js", "TypeScript", "Node.js"],
-  authors: [{ name: "Vyshnav Suresh" }],
-  creator: "Vyshnav Suresh",
-  publisher: "Vyshnav Suresh",
-  metadataBase: new URL("https://vyshnavsuresh.tech"),
-  openGraph: {
-    title: "Vyshnav Suresh | Full Stack Developer",
-    description: "Full Stack Developer passionate about building exceptional digital experiences with modern web technologies.",
-    url: "https://vyshnavsuresh.tech",
-    siteName: "Vyshnav Suresh",
-    locale: "en_US",
-    type: "website",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Vyshnav Suresh - Full Stack Developer",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Vyshnav Suresh | Full Stack Developer",
-    description: "Full Stack Developer passionate about building exceptional digital experiences with modern web technologies.",
-    creator: "@vyshnav_suresh",
-    images: ["/og-image.jpg"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon?<generated>", type: "image/<generated>", sizes: "<generated>" },
-    ],
-    apple: [
-      { url: "/apple-icon?<generated>", type: "image/<generated>", sizes: "<generated>" },
-    ],
-  },
+  title: "Vyshnav Suresh | Full Stack Engineer",
+  description: "Portfolio of Vyshnav Suresh, Full Stack Engineer specialising in Node.js, React, Python, and GenAI automation.",
+  metadataBase: new URL("https://vyshnav.dev"),
 };
 
-// Viewport configuration
 export const viewport: Viewport = {
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#0a0a0a' },
-  ],
+  themeColor: '#ffffff',
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 5,
-  userScalable: true,
-  colorScheme: 'dark',
 };
 
 export default function RootLayout({
@@ -91,28 +37,40 @@ export default function RootLayout({
   return (
     <html 
       lang="en" 
-      className={`${geistSans.variable} ${geistMono?.variable}`}
+      className={`${dmSans.variable} ${dmSerifDisplay.variable} scroll-smooth`}
       suppressHydrationWarning
     >
-     
-      <body className="min-h-screen font-sans antialiased px-20">
-        {/* Navigation */}
-        <nav className="fixed top-0 left-0 right-0 bg-[#faf6ff]/80 shadow-lg backdrop-blur-[6px] z-50 py-4 px-0 border-b border-[#e3d7fa]">
-  <div className="container mx-auto  flex justify-between items-center">
-    <Link href="/" className="text-2xl font-extrabold tracking-tight text-[#6c3fd1] hover:text-[#7e3ff2] transition">Vyshnav</Link>
-    <div className="flex items-center">
-      <div className="hidden md:flex space-x-8">
-        <Link href="/about" className="font-medium text-[#2d234a] hover:text-[#6c3fd1] transition">About</Link>
-        <Link href="/skills" className="font-medium text-[#2d234a] hover:text-[#6c3fd1] transition">Skills</Link>
-        <Link href="/projects" className="font-medium text-[#2d234a] hover:text-[#6c3fd1] transition">Projects</Link>
-        <Link href="/blog" className="font-medium text-[#2d234a] hover:text-[#6c3fd1] transition">Blog</Link>
-        <Link href="/hobby" className="font-medium text-[#2d234a] hover:text-[#6c3fd1] transition">Hobby</Link>
-        <Link href="/contact" className="font-medium text-[#2d234a] hover:text-[#6c3fd1] transition">Contact</Link>
-      </div>
-    </div>
-  </div>
-</nav>
-        {children}
+      <body className="min-h-screen font-sans bg-white text-gray-600 antialiased">
+        <nav className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md z-50 py-4 border-b border-gray-200">
+          <div className="container mx-auto px-4 md:px-8 max-w-6xl flex justify-between items-center">
+            <Link href="/" className="font-display text-xl tracking-tight text-primary hover:opacity-80 transition-opacity">
+              Portfolio
+            </Link>
+            
+            <div className="hidden md:flex items-center space-x-6">
+              <Link href="/#timeline" className="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Experience</Link>
+              <Link href="/#projects" className="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Projects</Link>
+              <Link href="/#skills" className="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Skills</Link>
+              <Link href="/blog" className="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Blog</Link>
+              <Link href="/#contact" className="text-sm font-medium bg-primary text-white px-5 py-2 rounded-xl hover:bg-blue-700 transition-colors shadow-sm">Get In Touch</Link>
+            </div>
+            
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <button aria-label="Menu" className="p-2 text-gray-600">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+              </button>
+            </div>
+          </div>
+        </nav>
+        
+        <main className="pt-20">
+          {children}
+        </main>
+
+        <footer className="py-8 text-center border-t border-gray-200 mt-20">
+          <p className="text-sm text-gray-500">&copy; 2026 Vyshnav Suresh &middot; Full Stack Engineer</p>
+        </footer>
       </body>
     </html>
   );
